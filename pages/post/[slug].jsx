@@ -46,7 +46,7 @@ export async function getStaticProps({ params }) {
   console.log(comments);
 
   return {
-    props: { post, comments: comments.data },
+    props: { post, comments: comments?.data ?? [] },
   };
 }
 
