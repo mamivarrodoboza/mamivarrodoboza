@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { PostCard, Categories, PostWidget } from "../components";
-import { getPosts } from "../services";
+import Image from 'next/image';
+import { PostCard, Categories, PostWidget } from '../components';
+import { getPosts } from '../services';
 
 export default function Home({ posts }) {
   return (

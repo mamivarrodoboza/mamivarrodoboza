@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 
 const CommentsForm = ({ slug, relatedComments, setRelatedComments }) => {
-  const [error, setError] = useState(false);
+  const [error] = useState(false);
   // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [commentMessage, setCommentMessage] = useState('');
   const updateCommentMessage = (event) => {
@@ -35,7 +36,7 @@ const CommentsForm = ({ slug, relatedComments, setRelatedComments }) => {
     await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify(newComment),
-    }).then((res) => {
+    }).then(() => {
       setRelatedComments([newComment, ...relatedComments]);
       setCommentMessage('');
     });

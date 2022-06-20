@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable comma-dangle */
+import React, { useState } from 'react';
 import { getPosts, getPostDetails } from '../../services';
 import {
   PostDetail,

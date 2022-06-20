@@ -1,8 +1,7 @@
 import nodemailer from 'nodemailer';
-import SMTPTransport from 'nodemailer/lib/smtp-transport';
+// import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
 export default async function handler(req, res) {
-  console.log(req.body);
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

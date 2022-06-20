@@ -1,7 +1,7 @@
 import moment from 'moment';
 import parse from 'html-react-parser';
 
-const Comments = ({ slug, relatedComments }) => (
+const Comments = ({ relatedComments }) => (
   <>
     {relatedComments.length > 0 && (
       <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">

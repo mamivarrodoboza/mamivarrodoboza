@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 function Rolam() {
   return (
     <section className="relatice max-w-5xl mx-auto my-20 p-8">

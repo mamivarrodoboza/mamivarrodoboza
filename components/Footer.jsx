@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -24,8 +25,7 @@ function Footer() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then((res) => {
-      console.log(res);
+    }).then(() => {
       setMessage('');
     });
   };

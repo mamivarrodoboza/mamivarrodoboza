@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { getCategories } from "../services";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { getCategories } from '../services';
 
 const Header = () => {
   const { data: session } = useSession();
+  // eslint-disable-next-line no-unused-vars
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {

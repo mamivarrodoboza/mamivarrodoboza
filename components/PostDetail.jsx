@@ -1,6 +1,7 @@
-import React from "react";
+/* eslint-disable implicit-arrow-linebreak */
+import React from 'react';
 
-import moment from "moment";
+import moment from 'moment';
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -21,7 +22,7 @@ const PostDetail = ({ post }) => {
     }
 
     switch (type) {
-      case "heading-three":
+      case 'heading-three':
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
             {modifiedText.map((item, i) => (
@@ -29,7 +30,7 @@ const PostDetail = ({ post }) => {
             ))}
           </h3>
         );
-      case "paragraph":
+      case 'paragraph':
         return (
           <p key={index} className="mb-8">
             {modifiedText.map((item, i) => (
@@ -37,7 +38,7 @@ const PostDetail = ({ post }) => {
             ))}
           </p>
         );
-      case "heading-four":
+      case 'heading-four':
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
@@ -45,7 +46,7 @@ const PostDetail = ({ post }) => {
             ))}
           </h4>
         );
-      case "image":
+      case 'image':
         return (
           <img
             key={index}
@@ -88,7 +89,7 @@ const PostDetail = ({ post }) => {
                 />
               </svg>
               <span className="align-middle">
-                {moment(post.createdAt).format("MMM DD, YYYY")}
+                {moment(post.createdAt).format('MMM DD, YYYY')}
               </span>
             </div>
           </div>
@@ -96,8 +97,11 @@ const PostDetail = ({ post }) => {
             {post.title}
           </h1>
           {post.content.raw.children.map((typeObj, index) => {
-            const children = typeObj.children.map((item, itemindex) =>
-              getContentFragment(itemindex, item.text, item)
+            const children = typeObj.children.map(
+              (item, itemindex) =>
+                // eslint-disable-next-line comma-dangle
+                getContentFragment(itemindex, item.text, item)
+              // eslint-disable-next-line function-paren-newline
             );
 
             return getContentFragment(index, children, typeObj, typeObj.type);
