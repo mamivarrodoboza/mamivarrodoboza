@@ -41,7 +41,7 @@ function PostDetails({ post, comments }) {
 export async function getStaticProps({ params }) {
   const post = await getPostDetails(params.slug);
   const commentsResponse = await fetch(
-    'https://mamivarrodoboza.vercel.app/api/comments'
+    `https://mamivarrodoboza.vercel.app/api/comments/${params.slug}`
   );
   const comments = await commentsResponse.json();
 
