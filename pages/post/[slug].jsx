@@ -11,6 +11,7 @@ import {
 
 function PostDetails({ post, comments }) {
   const [relatedComments, setRelatedComments] = useState(comments);
+  console.log(comments);
 
   return (
     <div className="PostDetailPage container mx-auto px-10 mb-8 mt-12">
@@ -43,7 +44,7 @@ export async function getStaticProps({ params }) {
   const commentsResponse = await fetch(
     `${process.env.SITE_URL}/api/comments/${params.slug}`
   );
-  const comments = await commentsResponse.json();
+  const comments = (await commentsResponse.json()) || [];
 
   return {
     props: { post, comments: comments.data },
