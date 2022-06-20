@@ -1,22 +1,27 @@
-import React from "react";
-import { getPosts, getPostDetails } from "../../services";
+import React, { useEffect, useState } from 'react';
+import { getPosts, getPostDetails } from '../../services';
 import {
   PostDetail,
   Categories,
   PostWidget,
-  Author,
   Comments,
   CommentsForm,
-} from "../../components";
+} from '../../components';
 
-function PostDetails({ post }) {
+function PostDetails({ post, comments }) {
+  const [relatedComments, setRelatedComments] = useState(comments);
+
   return (
     <div className="PostDetailPage container mx-auto px-10 mb-8 mt-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8">
           <PostDetail post={post} />
-          {/* <CommentsForm slug={post.slug} />
-          <Comments slug={post.slug} /> */}
+          <CommentsForm
+            slug={post.slug}
+            relatedComments={relatedComments}
+            setRelatedComments={setRelatedComments}
+          />
+          <Comments slug={post.slug} relatedComments={relatedComments} />
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
@@ -33,10 +38,14 @@ function PostDetails({ post }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = await getPostDetails(params.slug);
+  const post = await getPostDetails(params.slug);
+  const commentsResponse = await fetch(
+    `${process.env.SITE_URL}/api/comments/${params.slug}`
+  );
+  const comments = await commentsResponse.json();
 
   return {
-    props: { post: data },
+    props: { post, comments: comments.data },
   };
 }
 

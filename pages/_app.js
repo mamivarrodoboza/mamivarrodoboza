@@ -1,8 +1,8 @@
-import React from "react";
-import { SessionProvider } from "next-auth/react";
+import React from 'react';
+import { SessionProvider } from 'next-auth/react';
 
-import "../styles/globals.scss";
-import { Layout } from "../components";
+import '../styles/globals.scss';
+import { Layout } from '../components';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
