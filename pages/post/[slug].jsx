@@ -9,7 +9,7 @@ import {
   CommentsForm,
 } from '../../components';
 
-function PostDetails({ post, comments }) {
+function PostDetails({ post, comments = [] }) {
   const [relatedComments, setRelatedComments] = useState(comments);
   console.log(comments);
 
@@ -41,10 +41,9 @@ function PostDetails({ post, comments }) {
 
 export async function getStaticProps({ params }) {
   const post = await getPostDetails(params.slug);
-  const commentsResponse = await fetch(
-    `${process.env.SITE_URL}/api/comments/${params.slug}`
-  );
-  const comments = (await commentsResponse.json()) || [];
+  const commentsResponse = await fetch(`${process.env.SITE_URL}/api/comments`);
+  const comments = await commentsResponse.json();
+  console.log(comments);
 
   return {
     props: { post, comments: comments.data },
