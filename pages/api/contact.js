@@ -13,13 +13,13 @@ export default async function handler(req, res) {
 
   const options = {
     from: 'mamivarrodoboza.service@gmail.com',
-    to: 'devvatu@gmail.com',
+    to: 'szathrobi98@gmail.com',
     subject: 'Mamivarródobozától',
-    text: `${req.body.email} ${req.body.message}`,
-    html: `<div><p>from: ${req.body.email}</p><p>${req.body.message}</p></div>`,
+    text: `${req.body.name} ${req.body.email} ${req.body.message}`,
+    html: `<div><p>from: ${req.body.email} (${req.body.name})</p><p>${req.body.message}</p></div>`,
   };
 
-  if (!req.body.email || !req.body.message) {
+  if (!req.body.name || !req.body.email || !req.body.message) {
     res.status(400).json({ success: false });
   } else {
     try {

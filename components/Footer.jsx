@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
 function Footer() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState(false);
   const sendMessage = async (event) => {
@@ -15,7 +17,8 @@ function Footer() {
       return;
     }
     const data = {
-      email: session.user.email,
+      name,
+      email,
       message,
     };
     fetch('/api/contact', {
@@ -26,12 +29,14 @@ function Footer() {
       },
       body: JSON.stringify(data),
     }).then(() => {
+      setName('');
+      setEmail('');
       setMessage('');
     });
   };
 
   return (
-    <footer className="flex flex-col-reverse md:flex-row justify-evenly gap-8 py-16 md:py-8 px-4 mt-20 text-white">
+    <footer className="flex flex-col-reverse md:flex-row justify-evenly gap-8 py-16 md:py-8 px-4 text-white">
       <nav className="flex justify-center md:pt-10 gap-4 md:gap-8 mt-16 md:mt-0">
         <div className="flex flex-col justify-start gap-3">
           <Link href="/">
@@ -69,24 +74,47 @@ function Footer() {
         onSubmit={(event) => sendMessage(event)}
       >
         <h4 className="text-xl">Küldj egy üzenetet!</h4>
-        <textarea
-          className="shadow-md rounded-xl p-2 text-sm text-black"
-          cols={60}
-          rows={6}
-          value={message}
-          placeholder="Üzenet írása..."
-          onChange={(event) => setMessage(event.target.value)}
-          onFocus={() => setError(false)}
-        />
-        {error && (
-          <p className="text-xs text-red-500">Ne hagyja üresen a mezőt!</p>
-        )}
+        <label>
+          <p>Név</p>
+          <input
+            type="text"
+            placeholder="John Doe"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            className="w-full shadow-md rounded-xl p-2 text-sm text-black"
+          />
+        </label>
+        <label>
+          <p>Email</p>
+          <input
+            type="email"
+            value={email}
+            placeholder="john.doe@gmail.com"
+            onChange={(event) => setEmail(event.target.value)}
+            className="w-full shadow-md rounded-xl p-2 text-sm text-black"
+          />
+        </label>
+        <label>
+          <p>Üzenet</p>
+          <textarea
+            className="shadow-md rounded-xl p-2 text-sm text-black"
+            cols={60}
+            rows={5}
+            value={message}
+            placeholder="Üzenet írása..."
+            onChange={(event) => setMessage(event.target.value)}
+            onFocus={() => setError(false)}
+          />
+          {error && (
+            <p className="text-xs text-red-500">Ne hagyja üresen a mezőt!</p>
+          )}
+        </label>
         <button
           className={`w-full transition duration-200 ease transform inline-block ${
             message
               ? 'bg-pink-600 hover:-translate-y-1 hover:shadow-lg cursor-pointer'
               : 'bg-pink-500 cursor-default'
-          } text-sm font-medium rounded-full px-2 py-2`}
+          } text-sm font-medium rounded-full px-2 py-2 `}
           type="submit"
           disabled={!message}
         >
