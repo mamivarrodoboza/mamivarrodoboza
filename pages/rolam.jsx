@@ -1,7 +1,7 @@
 function Rolam() {
   return (
-    <section className="relatice max-w-5xl mx-auto my-20 p-8">
-      <article className="flex flex-col-reverse md:flex-row justify-center gap-12 mb-28">
+    <section className="relatice max-w-5xl mx-auto mt-12 mb-20 p-8">
+      <article className="about-card bg-white shadow-lg rounded-lg p-4 flex flex-col-reverse md:flex-row justify-center gap-12 mb-16">
         <p className="max-w-lg mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
           esse deleniti aperiam magni cum distinctio. Eos quas exercitationem
@@ -25,7 +25,7 @@ function Rolam() {
           />
         </div>
       </article>
-      <article className="flex flex-col md:flex-row justify-center gap-12 mb-28">
+      <article className="about-card bg-white shadow-lg rounded-lg p-4 flex flex-col md:flex-row justify-center gap-12 mb-28">
         <div className="relative overflow-hidden">
           <img
             src="/images/about-me.jpg"

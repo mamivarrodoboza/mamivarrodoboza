@@ -15,7 +15,7 @@ function PostDetails({ post, comments }) {
   return (
     <div className="PostDetailPage container mx-auto px-10 mb-8 mt-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="col-span-1 lg:col-span-8">
+        <div className="postDetail col-span-1 lg:col-span-8">
           <PostDetail post={post} />
           <CommentsForm
             slug={post.slug}

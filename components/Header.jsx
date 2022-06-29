@@ -17,11 +17,14 @@ const Header = () => {
 
   return (
     <header className="relative h-10 z-20 text-white">
-      <div className="container mx-auto flex justify-between align-middle py-2 px-8">
-        <div className="">Logo</div>
-        <nav className="flex align-middle gap-4">
+      <div className="container mx-auto flex justify-center gap-2 md:justify-between align-middle py-2 px-8">
+        <div className="">Log</div>
+        <nav className="flex align-middle gap-2">
           <Link href="/">
             <a>Blog</a>
+          </Link>
+          <Link href="/esemenyek">
+            <a>Események</a>
           </Link>
           <Link href="/rolam">
             <a>Rólam</a>

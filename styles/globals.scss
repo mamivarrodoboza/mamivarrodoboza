@@ -56,3 +56,21 @@ a {
 .PostDetailPage button {
   background: linear-gradient(180deg, #ef6c00 0%, #e65100 100%);
 }
+
+.events-container article,
+.about-card,
+.content-container,
+.postDetail {
+  animation: fadeUp 1200ms forwards ease;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

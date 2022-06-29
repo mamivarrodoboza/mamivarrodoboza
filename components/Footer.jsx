@@ -50,13 +50,13 @@ function Footer() {
           </Link>
         </div>
         <div className="flex flex-col justify-start gap-3">
-          <Link href="/">
-            <a>Facebook</a>
+          <Link href="https://www.facebook.com/Mami-Varr%C3%B3-Doboza-224117758310267/">
+            <a target="blank">Facebook</a>
           </Link>
-          <Link href="/">
-            <a>Twitter</a>
+          <Link href="https://www.youtube.com/channel/UCM8vNO05d4C78o3OGHDkcCA">
+            <a target="blank">Youtube</a>
           </Link>
-          <Link href="/">
+          <Link href="https://www.instagram.com/mamivarrodoboza/">
             <a>Instagram</a>
           </Link>
         </div>
@@ -97,7 +97,7 @@ function Footer() {
         <label>
           <p>Üzenet</p>
           <textarea
-            className="shadow-md rounded-xl p-2 text-sm text-black"
+            className="w-full shadow-md rounded-xl p-2 text-sm text-black"
             cols={60}
             rows={5}
             value={message}
