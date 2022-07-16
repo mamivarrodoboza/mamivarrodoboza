@@ -17,6 +17,11 @@ footer {
   background: linear-gradient(to bottom, #ef6c00, #e65100);
 }
 
+header .mobile-nav ul {
+  background-color: #e9ab70;
+  transition: 400ms;
+}
+
 .text-shadow {
   text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
 }
@@ -63,6 +68,32 @@ a {
 .postDetail,
 .category-container {
   animation: fadeUp 1200ms forwards ease;
+}
+
+.register-button {
+  background-color: #ff7226aa;
+  border: 3px solid #ff7226;
+  color: #fff;
+}
+
+.login-button {
+  background-color: #ff7226;
+  color: #fff;
+}
+
+.aszf {
+  border-bottom: 2px solid #ce8f55;
+}
+
+.login-button,
+.register-button,
+.google-login {
+  transition: 250ms;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
 }
 
 @keyframes fadeUp {

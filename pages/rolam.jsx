@@ -1,6 +1,9 @@
 function Rolam() {
   return (
-    <section className="relatice max-w-5xl mx-auto mt-12 mb-20 p-8">
+    <section className="relatice max-w-5xl mx-auto mt-6 mb-2 p-8">
+      <h1 className="text-center mb-8 text-2xl">
+        Ismerj meg engem és a blogomat!
+      </h1>
       <article className="about-card bg-white shadow-lg rounded-lg p-4 flex flex-col-reverse md:flex-row justify-center gap-12 mb-16">
         <p className="max-w-lg mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore

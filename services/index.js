@@ -261,20 +261,17 @@ export const getRecentPosts = async () => {
 export const getEvents = async () => {
   const query = gql`
     query getEvents {
-      eventsConnection {
-        edges {
-          node {
+      events {
+        documentInStages {
+          date
+          description
+          name
+          id
+          image {
+            mimeType
             id
-            date
-            description
-            name
-            image {
-              id
-              documentInStages {
-                fileName
-                url
-              }
-            }
+            fileName
+            url
           }
         }
       }
@@ -282,5 +279,24 @@ export const getEvents = async () => {
   `;
   const result = await request(graphqlAPI, query);
 
-  return result.eventsConnection.edges;
+  return result.events;
+};
+
+export const getVideos = async () => {
+  const query = gql`
+    query getVideos {
+      videos {
+        id
+        name
+        video {
+          fileName
+          mimeType
+          url
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+
+  return result.videos;
 };

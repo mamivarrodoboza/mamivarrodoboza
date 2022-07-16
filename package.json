@@ -13,11 +13,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "graphql": "^15.6.1",
     "graphql-request": "^3.5.0",
     "html-react-parser": "^1.4.0",
     "moment": "^2.29.1",
-    "mongoose": "^6.4.0",
+    "mongoose": "^6.4.4",
     "next": "11.1.2",
     "next-auth": "^4.3.4",
     "nodemailer": "^6.7.5",
