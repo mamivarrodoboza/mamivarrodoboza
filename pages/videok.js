@@ -3,7 +3,6 @@ import React from 'react';
 import { getVideos } from '../services';
 
 function Videok({ videos }) {
-  console.log(videos);
   return (
     <section>
       <h1 className="text-center my-8 text-3xl font-medium">Videók</h1>
@@ -26,7 +25,7 @@ function Videok({ videos }) {
 
 // Fetch data at build time
 export async function getStaticProps() {
-  const videos = await getVideos();
+  const videos = (await getVideos()) || [];
 
   return {
     props: { videos },

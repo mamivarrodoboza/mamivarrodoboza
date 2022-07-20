@@ -8,7 +8,7 @@ import workerSrc from '../pdf-worker';
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
-export default function PDFViewer() {
+export default function PDFViewer({ pdfWidth }) {
   const [numPages, setNumPages] = useState(null);
 
   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
@@ -29,7 +29,7 @@ export default function PDFViewer() {
             pageNumber={index + 1}
             renderAnnotationLayer={false}
             renderTextLayer={false}
-            // width={pdfWidth}
+            width={pdfWidth}
           />
         ))}
       </Document>
