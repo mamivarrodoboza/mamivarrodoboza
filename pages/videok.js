@@ -3,6 +3,7 @@ import React from 'react';
 import { getVideos } from '../services';
 
 function Videok({ videos }) {
+  console.log(videos);
   return (
     <section>
       <h1 className="text-center my-8 text-3xl font-medium">Videók</h1>
@@ -12,7 +13,7 @@ function Videok({ videos }) {
             key={video.id}
             className="bg-white h-72 shadow-lg rounded-lg p-4 lg:p-8 pb-12 mb-8"
           >
-            <video src={video.url} controls type={video.mimeType} />
+            <video src={video.video.url} controls type={video.video.mimeType} />
             <h2 className="w-72 text-center mt-4 text-lg font-semibold">
               {video.name}
             </h2>

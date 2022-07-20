@@ -70,15 +70,17 @@ a {
   animation: fadeUp 1200ms forwards ease;
 }
 
+.login-button,
 .register-button {
-  background-color: #ff7226aa;
-  border: 3px solid #ff7226;
+  background-color: #ff7226;
   color: #fff;
 }
 
-.login-button {
-  background-color: #ff7226;
-  color: #fff;
+.register-button {
+  &:disabled {
+    opacity: 0.75;
+    pointer-events: none;
+  }
 }
 
 .aszf {
