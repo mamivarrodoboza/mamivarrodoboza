@@ -98,6 +98,23 @@ a {
   }
 }
 
+.login-quote,
+.videos-container {
+  animation: fadeIn 1200ms forwards ease;
+}
+
+.login-box {
+  animation: fadeIn 1200ms 300ms forwards ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fadeUp {
   0% {
     transform: translateY(1rem);

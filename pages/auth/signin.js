@@ -76,8 +76,8 @@ export default function SignIn({ providers, csrfToken }) {
 
   return (
     <section className="relative w-full h-screen flex flex-col gap-8 items-center">
-      <h1 className="hidden md:block opacity-80 text-white text-bold text-center text-4xl drop-shadow max-w-sm absolute z-10 top-20 left-1/4 transform -translate-x-1/2">
-        <i>
+      <h1 className="login-quote opacity-0 hidden md:block  text-white text-bold text-center text-4xl drop-shadow max-w-sm absolute z-10 top-20 left-1/4 transform -translate-x-1/2">
+        <i className="opacity-80">
           A legszebb pillanatok a váratlan, mindennapi pillanatok, amikor
           lazítunk és beengedjük a varázslatot
         </i>
@@ -87,8 +87,9 @@ export default function SignIn({ providers, csrfToken }) {
         layout="fill"
         alt="Boat on a river"
         className="absolute left-0 w-full h-full"
+        priority
       />
-      <div className="rounded-lg w-11/12 md:w-96 xl:w-2/6 max-w-md shadow-md px-4 md:px-8 py-2 h-96 absolute top-1/2 right-1/2  md:right-1/3 transform -translate-y-1/2 translate-x-1/2 z-10 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg bg-clip-padding border border-gray-300 flex flex-col items-center justify-evenly">
+      <div className="opacity-0 login-box rounded-lg w-11/12 md:w-96 xl:w-2/6 max-w-md shadow-md px-4 md:px-8 py-2 h-96 absolute top-1/2 right-1/2  md:right-1/3 transform -translate-y-1/2 translate-x-1/2 z-10 bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg bg-clip-padding border border-gray-300 flex flex-col items-center justify-evenly">
         <h1 className="text-3xl">Bejelentkezés</h1>
         <form className="flex flex-col relative">
           <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
