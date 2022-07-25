@@ -37,17 +37,30 @@ function Footer() {
 
   return (
     <footer className="flex flex-col-reverse md:flex-row justify-evenly gap-8 py-16 md:py-8 px-4 text-white">
-      <nav className="flex justify-center md:pt-10 gap-4 md:gap-8 mt-16 md:mt-0">
-        <div className="flex flex-col justify-start gap-3">
-          <Link href="/">
-            <a>Blog</a>
-          </Link>
-          <Link href="/rolam">
-            <a>Rólam</a>
-          </Link>
-          <Link href="/auth/signin">
-            <a>Bejelentkezés</a>
-          </Link>
+      <nav className="max-h-72 overflow-hidden relative transform md:translate-y-12 flex justify-center gap-8 md:gap-12 mt-16 md:mt-0">
+        <div className="flex flex-col sm:flex-row justify-start gap-12">
+          <div className="flex flex-col gap-3">
+            <Link href="/">
+              <a>Blog</a>
+            </Link>
+            <Link href="/videok">
+              <a>Videók</a>
+            </Link>
+            <Link href="/esemenyek">
+              <a>Események</a>
+            </Link>
+            <Link href="/rolam">
+              <a>Rólam</a>
+            </Link>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Link href="/auth/signin">
+              <a>Bejelentkezés</a>
+            </Link>
+            <Link href="/adatkezelesi_tajekoztato">
+              <a target="blank">Adatkezelési tájékoztató</a>
+            </Link>
+          </div>
         </div>
         <div className="flex flex-col justify-start gap-3">
           <Link href="https://www.facebook.com/Mami-Varr%C3%B3-Doboza-224117758310267/">
@@ -60,17 +73,9 @@ function Footer() {
             <a>Instagram</a>
           </Link>
         </div>
-        <div className="flex flex-col justify-start gap-3">
-          <Link href="/">
-            <a>Privacy Policy</a>
-          </Link>
-          <Link href="/">
-            <a>Oldaltérkép</a>
-          </Link>
-        </div>
       </nav>
       <form
-        className=" flex flex-col gap-3"
+        className="flex flex-col gap-3"
         onSubmit={(event) => sendMessage(event)}
       >
         <h4 className="text-xl">Küldj egy üzenetet!</h4>

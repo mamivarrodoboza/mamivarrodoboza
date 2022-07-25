@@ -26,6 +26,7 @@
     "react-dom": "17.0.2",
     "react-intersection-observer": "^9.3.4",
     "react-multi-carousel": "^2.6.5",
+    "react-pdf": "^5.7.2",
     "sass": "^1.42.1",
     "swr": "^1.0.1"
   },

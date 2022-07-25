@@ -18,7 +18,7 @@ footer {
 }
 
 header .mobile-nav ul {
-  background-color: #e9ab70;
+  background-color: #e7a76a;
   transition: 400ms;
 }
 
@@ -70,15 +70,17 @@ a {
   animation: fadeUp 1200ms forwards ease;
 }
 
+.login-button,
 .register-button {
-  background-color: #ff7226aa;
-  border: 3px solid #ff7226;
+  background-color: #ff7226;
   color: #fff;
 }
 
-.login-button {
-  background-color: #ff7226;
-  color: #fff;
+.register-button {
+  &:disabled {
+    opacity: 0.75;
+    pointer-events: none;
+  }
 }
 
 .aszf {
@@ -96,6 +98,23 @@ a {
   }
 }
 
+.login-quote,
+.videos-container {
+  animation: fadeIn 1200ms forwards ease;
+}
+
+.login-box {
+  animation: fadeIn 1200ms 300ms forwards ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fadeUp {
   0% {
     transform: translateY(1rem);

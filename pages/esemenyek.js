@@ -57,7 +57,7 @@ export default function Events({ events }) {
 
 // Fetch data at build time
 export async function getStaticProps() {
-  const events = await getEvents();
+  const events = (await getEvents()) || [];
   events.sort(
     (event1, event2) =>
       new Date(event2.documentInStages[0].date).getTime() -
